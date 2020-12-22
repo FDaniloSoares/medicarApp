@@ -1,0 +1,77 @@
+.image-space {
+  margin: 0px 5px 25px 5px;
+  max-width:200px;
+  max-height:150px;
+  width: auto;
+  height: auto;
+}
+
+
+form input {
+  margin: 5px;
+}
+
+
+.span-input-ckeckbox {
+  font-size: 0.8rem;
+  vertical-align: bottom;
+  color: #A8A8A8;
+}
+
+.btn-primary {
+  background-color: #49B4BB;
+  color: #FFFFFF
+}
+
+.btn-primary:hover {
+  background-color: #90D3D7;
+}
+
+.btn-secundary {
+  background-color: #FFFFFF;
+  color: #49B4BB;
+}
+
+.btn-secundary:hover {
+  background-color: #D9F1F3;
+  color: #49B4BB;
+}
+
+
+.input-box {
+  margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 480px) {      
+  [class~="init-5"][class^="col"] {
+    grid-column: auto/span 12;
+  }
+  [class^="col"] {
+    grid-column: auto/span 12;
+  }
+  
+  .mt-1px{
+    margin-top: 1px;
+  }
+  
+}
+
+@media only screen and (min-width: 481px) and (max-width: 860px) {      
+  [class~="init-5"][class^="col"] {
+    grid-column: auto/span 10;
+    grid-column-start: 2;
+  }
+  [class^="col"] {
+    grid-column: auto/span 10;
+    grid-column-start: 2;
+  }
+  
+  button[class~="init-5"][class^="col"] {
+    grid-column: auto/span 5;
+    grid-column-start: 2;
+  }
+  button[class~="mt-1px"]{
+    grid-column: auto/span 5;
+  }
+
+}

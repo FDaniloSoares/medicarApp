@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="centralizer y-centralizer-correction">
+        <div class="grid-row">
+            <div class="col-2 init-5">
+                <img src="../../../../assets/img/logo.png" alt="logo" class="image-space" />
+            </div>
+        </div>
+        <form [formGroup]=" form" class="pure-form">
+            <div class="grid-row ">
+                <div class="col-4 init-5 animated-placeholder">
+                    <input id="username" type="text" formControlName="username" placeholder=" " required=true />
+                    <label htmlFor="username">Login ou e-mail</label>
+                    <div *ngIf="validations && this.form.get('username').invalid">
+                        <small class="text-danger" *ngIf="this.form.get('username').errors.required">
+                            Campo obligatorio
+                        </small>
+                        <small class="text-danger" *ngIf="this.form.get('username').errors.minlength">
+                            Campo deve ter ao menos 3 caracteres
+                        </small>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-row">
+                <div class="col-4 init-5 animated-placeholder">
+                    <input id="password" [type]="fieldTextType ? 'text' : 'password'" formControlName="password"
+                        placeholder=" " />
+                    <label htmlFor="password">Password</label>
+                    <div *ngIf="validations && this.form.get('password').invalid">
+                        <small class="text-danger" *ngIf="this.form.get('password').errors.required">
+                            Campo obligatorio
+                        </small>
+                        <small class="text-danger" *ngIf="this.form.get('password').errors.minlength">
+                            Campo deve ter ao menos 3 caracteres
+                        </small>
+                    </div>
+
+                    <button type="button" (click)="toggleFielTextType()">
+                        <fa-icon [icon]="faEye" [hidden]="!fieldTextType"></fa-icon>
+                        <fa-icon [icon]="faEyeSlash" [hidden]="fieldTextType"></fa-icon>
+                    </button>
+                </div>
+            </div>
+            <div class="grid-row">
+                <div class="col-4 init-5 input-box">
+                    <input type="checkbox" tabindex="-1" />
+                    <span class="span-input-ckeckbox">&nbsp; &nbsp;Lembrar Senha</span>
+                </div>
+            </div>
+            <div class="grid-row">
+                <button type="button" class="col-2 init-5 pure-button btn-secundary" routerLink="/cadastro">
+                    Criar Conta
+                </button>
+                <button type="button" class="col-2 mt-1px pure-button btn-primary" (click)="logar()">
+                    Acessar
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

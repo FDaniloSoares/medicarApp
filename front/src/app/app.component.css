@@ -1,0 +1,610 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+@import '../assets/css/toast.css';
+
+.container {
+  padding-right: 5px;
+  padding-left: 5px;
+  box-sizing: border-box;
+  height: 100vh;
+  }
+
+
+.centralizer {
+height: inherit;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+.y-centralizer-correction {
+transform: translateY(-10%);
+}
+
+
+/* ##### templetaozao da nike */
+.grid-row {
+display: grid;
+grid-template-columns: repeat(12, 1fr);
+justify-content: center;
+gap: 20px;
+}
+
+.centered {
+justify-content: center;
+justify-items: center;
+}
+
+.m-auto {
+margin:auto;
+}
+/* spanning cols */
+.col-2 {
+grid-column: auto/span 2;
+}
+.col-3 {
+grid-column: auto/span 3;
+}
+
+.col-4 {
+grid-column: auto/span 4;
+}
+
+.col-6 {
+grid-column: auto/span 6;
+}
+.col-8 {
+grid-column: auto/span 8;
+}
+
+.col-2 {
+grid-column: auto/span 2;
+}
+
+.init-5 {
+grid-column-start: 5;
+}
+
+/* spanning rows */
+
+.row-2 {
+grid-row: auto/span 2;
+}
+
+.row {
+grid-row: auto/span 1;
+}
+
+[class~="init-2"][class^="col"] {
+grid-column-start: 2;
+}
+
+[class~="init-3"][class^="col"] {
+grid-column-start: 3;
+}
+
+[class~="init-4"][class^="col"] {
+grid-column-start: 4;
+}
+
+[class~="init-5"][class^="col"] {
+grid-column-start: 5;
+}
+
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}
+
+input[type='checkbox'] {
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeSpeed;
+	width: 0.2rem;
+  height: 0.2rem;
+  margin: 10px 5px 5px 5px;
+	position: relative;
+  cursor: pointer;
+  opacity: 100%;
+}
+
+
+input[type='checkbox']:after {
+	content: "";
+	vertical-align: middle;
+	text-align: center;
+	line-height: 0.8rem;
+	position: absolute;
+	cursor: pointer;
+	height: 0.7rem;
+	width: 0.7rem;
+  left: 0;
+  border-width: 1.5px;
+  border-style: solid;
+  border-radius: 4px;
+  border-color: #A8A8A8;
+	top: 0;
+	font-size: 10px;
+  background: #fff;
+  transform: translateY(-50%);
+}
+
+small.text-danger {
+  font-size: x-small;
+  color: #b94a48;
+  height: fit-content;
+  margin-left: 6px;
+  padding-left: 0.6rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+input[type='checkbox']:checked:after {
+  cursor: pointer;
+  justify-content: center;
+  border-radius: 4px;
+  background: #49B4BB;
+  vertical-align: text-top;
+	text-align: center;
+	color: #fff;
+  border-width: 1.5px;
+  border-style: solid;
+  border-color: #49B4BB;
+}
+
+
+.pure-form input[type="text"],
+.pure-form input[type="password"],
+.pure-form input[type="email"],
+.pure-form input[type="url"],
+.pure-form input[type="date"],
+.pure-form input[type="month"],
+.pure-form input[type="time"],
+.pure-form input[type="datetime"],
+.pure-form input[type="datetime-local"],
+.pure-form input[type="week"],
+.pure-form input[type="number"],
+.pure-form input[type="search"],
+.pure-form input[type="tel"],
+.pure-form input[type="color"],
+.pure-form select,
+.pure-form textarea {
+  padding: 0.5em 0.6em;
+  display: inline-block;
+    border: 1px solid #A8A8A8;
+    border-radius: 4px;
+    vertical-align: middle;
+    box-sizing: border-box;
+  }
+
+  /*
+  Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
+  since IE8 won't execute CSS that contains a CSS3 selector.
+  */
+  .pure-form input:not([type]) {
+    padding: 0.5em 0.6em;
+  display: inline-block;
+  border: 1px solid #A8A8A8;
+  box-shadow: inset 0 1px 3px #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  
+  /* Chrome (as of v.32/34 on OS X) needs additional room for color to display. */
+  /* May be able to remove this tweak as color inputs become more standardized across browsers. */
+.pure-form input[type="color"] {
+  padding: 0.2em 0.5em;
+}
+
+
+.pure-form input[type="text"]:focus,
+.pure-form input[type="password"]:focus,
+.pure-form input[type="email"]:focus,
+.pure-form input[type="url"]:focus,
+.pure-form input[type="date"]:focus,
+.pure-form input[type="month"]:focus,
+.pure-form input[type="time"]:focus,
+.pure-form input[type="datetime"]:focus,
+.pure-form input[type="datetime-local"]:focus,
+.pure-form input[type="week"]:focus,
+.pure-form input[type="number"]:focus,
+.pure-form input[type="search"]:focus,
+.pure-form input[type="tel"]:focus,
+.pure-form input[type="color"]:focus,
+.pure-form select:focus,
+.pure-form textarea:focus {
+  outline: 0;
+  border-color: #49B4BB;
+}
+
+/*
+Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
+since IE8 won't execute CSS that contains a CSS3 selector.
+*/
+.pure-form input:not([type]):focus {
+  outline: 0;
+  border-color: #129FEA;
+}
+
+.pure-form input[type="file"]:focus,
+.pure-form input[type="radio"]:focus,
+.pure-form input[type="checkbox"]:focus {
+  outline: thin solid #129FEA;
+  outline: 1px auto #129FEA;
+}
+.pure-form .pure-checkbox,
+.pure-form .pure-radio {
+  margin: 0.5em 0;
+  display: block;
+}
+
+.pure-form input[type="text"][disabled],
+.pure-form input[type="password"][disabled],
+.pure-form input[type="email"][disabled],
+.pure-form input[type="url"][disabled],
+.pure-form input[type="date"][disabled],
+.pure-form input[type="month"][disabled],
+.pure-form input[type="time"][disabled],
+.pure-form input[type="datetime"][disabled],
+.pure-form input[type="datetime-local"][disabled],
+.pure-form input[type="week"][disabled],
+.pure-form input[type="number"][disabled],
+  .pure-form input[type="search"][disabled],
+  .pure-form input[type="tel"][disabled],
+  .pure-form input[type="color"][disabled],
+  .pure-form select[disabled],
+.pure-form textarea[disabled] {
+  cursor: not-allowed;
+  background-color: #eaeded;
+  color: #cad2d3;
+}
+
+/*
+Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
+since IE8 won't execute CSS that contains a CSS3 selector.
+*/
+.pure-form input:not([type])[disabled] {
+  cursor: not-allowed;
+  background-color: #eaeded;
+  color: #cad2d3;
+}
+.pure-form input[readonly],
+.pure-form select[readonly],
+.pure-form textarea[readonly] {
+  background-color: #eee; /* menu hover bg color */
+  color: #777; /* menu text color */
+  border-color: #A8A8A8;
+}
+
+.pure-form input:focus:invalid,
+.pure-form textarea:focus:invalid,
+  .pure-form select:focus:invalid {
+    color: #b94a48;
+    border-color:#A8A8A8;
+  }
+  .pure-form input[type="file"]:focus:invalid:focus,
+  .pure-form input[type="radio"]:focus:invalid:focus,
+  .pure-form input[type="checkbox"]:focus:invalid:focus {
+    outline-color: #e9322d;
+  }
+  .pure-form select {
+    /* Normalizes the height; padding is not sufficient. */
+    height: 2.25em;
+    border: 1px solid #A8A8A8;
+    background-color: white;
+  }
+  .pure-form select[multiple] {
+    height: auto;
+  }
+  .pure-form label {
+    margin: 0.5em 0 0.2em;
+  }
+  .pure-form fieldset {
+    margin: 0;
+    padding: 0.35em 0 0.75em;
+    border: 0;
+  }
+  .pure-form legend {
+    display: block;
+    width: 100%;
+    padding: 0.3em 0;
+    margin-bottom: 0.3em;
+    color: #333;
+  border-bottom: 1px solid #A8A8A8;
+}
+
+.pure-form-stacked input[type="text"],
+.pure-form-stacked input[type="password"],
+.pure-form-stacked input[type="email"],
+.pure-form-stacked input[type="url"],
+.pure-form-stacked input[type="date"],
+.pure-form-stacked input[type="month"],
+.pure-form-stacked input[type="time"],
+.pure-form-stacked input[type="datetime"],
+.pure-form-stacked input[type="datetime-local"],
+.pure-form-stacked input[type="week"],
+.pure-form-stacked input[type="number"],
+.pure-form-stacked input[type="search"],
+.pure-form-stacked input[type="tel"],
+.pure-form-stacked input[type="color"],
+.pure-form-stacked input[type="file"],
+.pure-form-stacked select,
+.pure-form-stacked label,
+.pure-form-stacked textarea {
+  display: block;
+  margin: 0.25em 0;
+}
+
+/*
+Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
+since IE8 won't execute CSS that contains a CSS3 selector.
+*/
+.pure-form-stacked input:not([type]) {
+  display: block;
+  margin: 0.25em 0;
+}
+.pure-form-aligned input,
+.pure-form-aligned textarea,
+.pure-form-aligned select,
+.pure-form-message-inline {
+  display: inline-block;
+  vertical-align: middle;
+}
+.pure-form-aligned textarea {
+  vertical-align: top;
+}
+
+/* Aligned Forms */
+.pure-form-aligned .pure-control-group {
+  margin-bottom: 0.5em;
+}
+.pure-form-aligned .pure-control-group label {
+  text-align: right;
+  display: inline-block;
+  vertical-align: middle;
+  width: 10em;
+  margin: 0 1em 0 0;
+}
+.pure-form-aligned .pure-controls {
+  margin: 1.5em 0 0 11em;
+}
+
+/* Rounded Inputs */
+.pure-form input.pure-input-rounded,
+.pure-form .pure-input-rounded {
+  border-radius: 2em;
+  padding: 0.5em 1em;
+}
+
+/* Grouped Inputs */
+.pure-form .pure-group fieldset {
+  margin-bottom: 10px;
+}
+.pure-form .pure-group input,
+.pure-form .pure-group textarea {
+  display: block;
+  padding: 10px;
+  margin: 0 0 -1px;
+  border-radius: 0;
+  position: relative;
+  top: -1px;
+}
+.pure-form .pure-group input:focus,
+.pure-form .pure-group textarea:focus {
+  z-index: 3;
+}
+.pure-form .pure-group input:first-child,
+.pure-form .pure-group textarea:first-child {
+    top: 1px;
+    border-radius: 4px 4px 0 0;
+    margin: 0;
+  }
+  .pure-form .pure-group input:first-child:last-child,
+  .pure-form .pure-group textarea:first-child:last-child {
+    top: 1px;
+    border-radius: 4px;
+    margin: 0;
+  }
+  .pure-form .pure-group input:last-child,
+  .pure-form .pure-group textarea:last-child {
+    top: -2px;
+    border-radius: 0 0 4px 4px;
+    margin: 0;
+  }
+  .pure-form .pure-group button {
+    margin: 0.35em 0;
+}
+
+.pure-form .pure-input-1 {
+  width: 100%;
+}
+.pure-form .pure-input-3-4 {
+  width: 75%;
+}
+.pure-form .pure-input-2-3 {
+  width: 66%;
+}
+.pure-form .pure-input-1-2 {
+  width: 50%;
+}
+.pure-form .pure-input-1-3 {
+  width: 33%;
+}
+.pure-form .pure-input-1-4 {
+  width: 25%;
+}
+
+/* Inline help for forms */
+.pure-form-message-inline {
+  display: inline-block;
+  padding-left: 0.3em;
+  color: #666;
+  vertical-align: middle;
+  font-size: 0.875em;
+}
+
+/* Block help for forms */
+.pure-form-message {
+  display: block;
+  color: #666;
+  font-size: 0.875em;
+}
+
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  box-shadow: 0 0 0px 1000px #fff inset;
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* criando label animada**********
+*******************************
+******************************* */
+.animated-placeholder {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.animated-placeholder input{  
+  outline: none;
+  transition: all .3s ease-out;
+  -webkit-transition: all .3s ease-out;
+  -moz-transition: all .3s ease-out;
+  -webkit-appearance:none;
+}
+
+.animated-placeholder input:placeholder{
+  color:transparent;
+}
+
+
+.animated-placeholder label {
+  box-sizing: border-box;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-left: 0.6em;
+  margin-left: 6px;
+  pointer-events: none;
+  position: absolute;
+  bottom: 50%;
+  transform: translateY(50%);
+  transition: all .3s ease-out;
+  -webkit-transition: all .3s ease-out;
+  -moz-transition: all .3s ease-out;
+  color: #A8A8A8;
+}
+.animated-placeholder input:focus + label,
+.animated-placeholder input:not(:placeholder-shown) + label{
+  font-size: 13px;
+  top: 0;
+  transform: translateY(-10%);
+  background-color: white;
+ margin-left: 10px;
+ padding: 0px 3px;
+ text-align: end;
+ max-height: 13px;
+}
+
+.animated-placeholder button {
+  outline: none;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  border: 0px;
+  border-color: transparent;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-right: 10px;
+  transform: translateY(-50%);
+  background-color: transparent;
+  transition: all .3s ease-out;
+  -webkit-transition: all .3s ease-out;
+  -moz-transition: all .3s ease-out;
+  color: #A8A8A8;
+}
+
+/* buttons
+*****************************************
+********************************************/
+  
+.pure-button {
+  font-family: 'Roboto', sans-serif;
+  font-size: 100%;
+  font-weight: 700;
+  padding: 0.5em 1em;
+  margin: 0.35rem;
+  border: none;
+  background-color: #E6E6E6;
+  text-decoration: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.pure-button:focus {
+  outline: 0;
+}
+.pure-button-active,
+.pure-button:active {
+  box-shadow: 0 0 0 1px rgba(19, 202, 202, 0.15) inset, 0 0 6px rgba(34, 172, 236, 0.2) inset;
+}
+
+.pure-button[disabled],
+.pure-button-disabled,
+.pure-button-disabled:hover,
+.pure-button-disabled:focus,
+.pure-button-disabled:active {
+  border: none;
+  background-image: none;
+  opacity: 0.40;
+  cursor: not-allowed;
+  box-shadow: none;
+  pointer-events: none;
+}
+
+.pure-button-hidden {
+  display: none;
+}
+
+.pure-button-primary,
+.pure-button-selected,
+a.pure-button-primary,
+a.pure-button-selected {
+  background-color: #49B4BB;
+  color: #fff;
+}
+
+.pure-button-error {
+  color: #fff;
+  background: rgb(202, 60, 60);
+  /* this is a maroon */
+}
+
+/* Button Groups */
+.pure-button-group .pure-button {
+  margin: 0;
+  border-radius: 0;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  
+}
+
+.pure-button-group .pure-button:first-child {
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+.pure-button-group .pure-button:last-child {
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border-right: none;
+}

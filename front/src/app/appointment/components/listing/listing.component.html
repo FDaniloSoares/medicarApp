@@ -1,0 +1,68 @@
+<div class="container spred-itens">
+    <div class="grid-row">
+        <div class="col-2">
+            <a routerLink="/login">
+                <img src="../../../../assets/img/logo.png" alt="logo" />
+            </a>
+        </div>
+        <div class="col-2 init-9 user-name">
+            <p>{{ usuario }}</p>
+        </div>
+        <div class="col-2">
+            <button type="button" class="pure-button btn-secundary" (click)="logout()">
+                Desconectar
+            </button>
+        </div>
+    </div>
+    <div class="border">
+        <div class="table-head">
+            <div>
+                <p>Consultas Marcadas</p>
+            </div>
+            <button type="button" class="pure-button btn-primary" routerLink="/consultas/agendamento">
+                &nbsp; + &nbsp; Nova Consulta &nbsp; &nbsp;
+            </button>
+        </div>
+
+        <div *ngIf="existeConsulta; else elseBlock">
+            <table class="tabela">
+                <thead>
+                    <tr>
+                        <th>&nbsp;&nbsp;Especialidade</th>
+                        <th>Profissional</th>
+                        <th>Data</th>
+                        <th>Hora</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let consulta of consultas">
+                        <td>
+                            &nbsp;&nbsp;{{ consulta.medico.especialidade.nome }}
+
+                        </td>
+                        <td>
+                            {{ consulta.medico.nome }}
+                        </td>
+                        <td>
+                            {{ consulta.dia }}
+                        </td>
+                        <td>
+                            <div class="button-desmarcar">
+                                <div>
+                                    {{ consulta.horario }}
+                                </div>
+                                <button type="button" (click)="deleteConsulta(this.consulta.id)"
+                                    class="pure-button btn-secundary">
+                                    X Desmarcar
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <ng-template #elseBlock>Oi, você não tem consultas marcadas</ng-template>
+
+    </div>
+</div>

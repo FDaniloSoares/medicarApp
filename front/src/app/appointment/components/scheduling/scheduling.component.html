@@ -1,0 +1,82 @@
+<div class="container">
+  <div class="centralizer y-centralizer-correction">
+    <div class="grid-row">
+      <div class="col-4 init-5">
+        <div class="selec-container">
+          <p><b>Nova Consulta</b></p>
+        </div>
+      </div>
+    </div>
+
+    <form [formGroup]="form">
+      <div class="grid-row">
+        <div class="col-4 init-5">
+          <div class="selec-container">
+            <select formControlName="especialidade" [ngClass]="{'selecionado' : existeMedico}"
+              (change)="onChangeEspecialidade($event.target.value)">
+              <option selected hidden value="">Especialidade</option>
+              <option *ngFor="let especialidade of especialidades" [value]="especialidade">
+                {{ especialidade }}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-row">
+        <div class="col-4 init-5">
+          <div class="selec-container">
+            <select formControlName="medico" class="inativo"
+              [ngClass]="{'ativo' : existeMedico, 'selecionado': existeData }"
+              (change)="onChangeMedico($event.target.value)">
+              <option selected hidden disabled value="">Medico</option>
+              <option *ngFor="let medico of medicos" [value]="medico">
+                {{ medico }}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-row">
+        <div class="col-4 init-5">
+          <div class="selec-container">
+            <select formControlName="data" class="inativo"
+              [ngClass]="{'ativo' : existeData, 'selecionado': existeHora }"
+              (change)="onChangeData($event.target.value)">
+              <option selected hidden disabled value="">Data</option>
+              <option *ngFor="let data of datas" [value]="data">
+                {{ data }}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-row">
+        <div class="col-4 init-5">
+          <div class="selec-container">
+            <select formControlName="hora" class="inativo"
+              [ngClass]="{'ativo' : existeHora, 'selecionado': ativarBotaoFormulario }"
+              (change)="onChangeHora($event.target.value)">
+              <option selected hidden disabled value="">Hora</option>
+              <option *ngFor="let hora of horas" [value]="hora">
+                {{ hora }}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-row mt-botton">
+        <button type="button" class="col-2 init-5 pure-button btn-secundary" routerLink="/consultas">
+          Cancelar
+        </button>
+
+        <button type="button" class="col-2 mt-1px pure-button btn-primary" [disabled]="form.invalid"
+          (click)="agendar()">
+          Confirmar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
