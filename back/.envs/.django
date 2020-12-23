@@ -1,0 +1,5 @@
+# DJANGO
+# ------------------------------------------------------------------------------
+DJANGO_SECRET_KEY=Vix6MiC48Bnia7Id5UPhOryGCtN9kbg14cScVXokwXJR11JL34MZzBmBaoHEkW2E
+DJANGO_SETTINGS_MODULE=config.development
+DJANGO_DEBUG=True

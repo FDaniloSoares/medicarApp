@@ -1,0 +1,12 @@
+django==3.0.10
+djangorestframework
+djangorestframework-simplejwt
+django-filter
+django-cors-headers
+django-environ
+psycopg2-binary
+
+
+
+
+

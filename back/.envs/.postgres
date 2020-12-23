@@ -1,0 +1,8 @@
+# PostgreSQL
+# ------------------------------------------------------------------------------
+POSTGRES_HOST=postgres
+POSTGRES_HOST_TEST=127.0.0.1
+POSTGRES_PORT=5432
+POSTGRES_DB=medicar
+POSTGRES_USER=YKkvaayMWsmFkhtvNnGnKkZaIpKBpKZa
+POSTGRES_PASSWORD=LQ7SzriZCmzrNxH40K6u2RHhGTu6SajDMeDgBXjPcB8UZ8yHDfZprj9QrI9JFx7D

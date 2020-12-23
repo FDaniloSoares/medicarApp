@@ -1,0 +1,12 @@
+# dev-requirements.in
+-c base.txt
+
+django-debug-toolbar
+django-extensions
+black
+flake8
+pip-tools
+Werkzeug
+pytest
+pytest-django
+isort

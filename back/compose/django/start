@@ -1,0 +1,26 @@
+#!/bin/bash
+
+set -o errexit
+set -o pipefail
+set -o nounset
+
+python manage.py makemigrations &&
+python manage.py migrate
+
+python << END
+import django
+django.setup()
+from django.contrib.auth import get_user_model
+User = get_user_model()
+if not User.objects.filter(is_superuser=True):
+    try:
+        User.objects.create_superuser(name='adm', username='adm', password='123')
+    except:
+        print( """
+            User already exists or try to add another in your shell by typing:
+            docker-compose run --rm django python manage.py createsuperuser
+        """)
+END
+
+python manage.py runserver_plus 0.0.0.0:8000
+

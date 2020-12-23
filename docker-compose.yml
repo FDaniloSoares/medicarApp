@@ -1,0 +1,30 @@
+version: '3'
+
+volumes:
+  local_postgres_data: {}
+
+services:
+  django:
+    build:
+      context: .
+      dockerfile: ./back/compose/django/Dockerfile
+    image: medicar_django
+    container_name: django
+    volumes:
+      - ./back:/app
+    env_file:
+      - ./back/.envs/.django
+      - ./back/.envs/.postgres
+    ports:
+      - "8000:8000"
+    command: /start
+
+  postgres:
+    image: postgres:12.3
+    container_name: postgres
+    volumes:
+      - local_postgres_data:/var/lib/postgresql/data
+    env_file:
+      - ./back/.envs/.postgres
+    ports:
+      - "5432:5432"

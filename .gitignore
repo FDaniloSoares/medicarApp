@@ -2,3 +2,7 @@
 node_modules
 dist
 gzipped
+venv
+.pytest_cache
+.devcontainer
+migrations
