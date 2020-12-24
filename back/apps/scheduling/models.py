@@ -4,6 +4,7 @@ from django.db import models
 from django.utils import timezone
 from django.core.exceptions import ValidationError
 from django.conf import settings
+from datetime import datetime
 
 
 class Especialidade(models.Model):

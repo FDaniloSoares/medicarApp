@@ -1,14 +1,118 @@
 {
     "especialidade": [
+        "Pediatria",
+        "Cardiologia",
         "Oncologia",
-        "Pediatria"
+        "Pscologia"
     ],
     "medico": [
         {
+            "nome": "Maria Luiza",
+            "crm": 666,
+            "telefone": 85954785412,
+            "especialidade": "Pscologia"
+        },
+        {
             "nome": "Joao da Silva",
-            "crm": 123456,
+            "crm": 1234,
             "telefone": 85988457874,
             "especialidade": "Oncologia"
+        },
+        {
+            "nome": "Gregory House",
+            "crm": 2544,
+            "especialidade": "Cardiologia"
+        },
+        {
+            "nome": "Tony Tony Chopper",
+            "crm": 3087,
+            "especialidade": "Pediatria"
+        },
+        {
+            "nome": "Drauzio Varella",
+            "crm": 3711,
+            "especialidade": "Pediatria"
+        }
+    ],
+    "hora": [
+        "08:00",
+        "09:00",
+        "10:00",
+        "11:00",
+        "12:00",
+        "14:00",
+        "15:00",
+        "16:00",
+        "17:00",
+        "18:00"
+    ],
+    "agenda": [
+        {
+            "medico_crm": 2544,
+            "dia": "2021-01-01",
+            "horarios": [
+                "14:00",
+                "15:00",
+                "16:00"
+            ]
+        },
+        {
+            "medico_crm": 666,
+            "dia": "2021-12-30",
+            "horarios": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "12:00",
+                "14:00",
+                "15:00",
+                "16:00",
+                "17:00",
+                "18:00"
+            ]
+        },
+        {
+            "medico_crm": 3087,
+            "dia": "2021-01-01",
+            "horarios": [
+                "12:00",
+                "14:00",
+                "15:00",
+                "16:00",
+                "17:00",
+                "18:00"
+            ]
+        },
+        {
+            "medico_crm": 3711,
+            "dia": "2021-02-10",
+            "horarios": [
+                "10:00",
+                "11:00",
+                "12:00",
+                "14:00"
+            ]
+        },
+        {
+            "medico_crm": 2544,
+            "dia": "2021-12-10",
+            "horarios": [
+                "14:00",
+                "15:00",
+                "16:00"
+            ]
+        },
+        {
+            "medico_crm": 3087,
+            "dia": "2021-01-02",
+            "horarios": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "17:00",
+                "18:00"
+            ]
         }
     ]
 }
