@@ -1,0 +1,14 @@
+{
+    "especialidade": [
+        "Oncologia",
+        "Pediatria"
+    ],
+    "medico": [
+        {
+            "nome": "Joao da Silva",
+            "crm": 123456,
+            "telefone": 85988457874,
+            "especialidade": "Oncologia"
+        }
+    ]
+}

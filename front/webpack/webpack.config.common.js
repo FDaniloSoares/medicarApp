@@ -11,7 +11,7 @@ module.exports = {
   entry: {
     polyfills: '/src/polyfills.ts',
     vendor: '/src/vendor.ts',
-    app: path.join('../src', IS_DEV ? 'main.ts' : 'main.prod.ts'),
+    app: path.join('/src', IS_DEV ? 'main.ts' : 'main.prod.ts'),
   },
   module: {
     rules: [

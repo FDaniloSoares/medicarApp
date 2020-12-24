@@ -28,3 +28,15 @@ services:
       - ./back/.envs/.postgres
     ports:
       - "5432:5432"
+  
+  angular:
+    build:
+      context: .
+      dockerfile: ./front/compose/Dockerfile
+    image: medicar_angular
+    container_name: angular
+    volumes:
+      - ./front:/app
+    ports:
+      - "3000:3000"
+    command: /start

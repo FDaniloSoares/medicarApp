@@ -73,7 +73,8 @@ export class LoginComponent implements OnInit {
           (err) => {
             if (err.status === 401) {
               const title: string = 'Login/Senha invalido(s)';
-              this.messageService.showWarning('', title);
+              const msg: string = 'Possui Cadastro???';
+              this.messageService.showWarning(msg, title);
             } else {
               const msg: string = 'Tente novamente em instantes';
               const title: string = 'Erro Inesperado';

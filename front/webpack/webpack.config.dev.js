@@ -33,6 +33,7 @@ module.exports = merge(common, {
     contentBase: path.join(__dirname, 'dist/'),
     port: 3000,
     publicPath: 'http://localhost:3000/',
+    host: '0.0.0.0',
     hotOnly: true,
     historyApiFallback: true,
     open: true,
