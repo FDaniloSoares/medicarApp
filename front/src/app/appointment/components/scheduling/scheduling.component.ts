@@ -166,9 +166,10 @@ export class SchedulingComponent implements OnInit {
           this.router.navigate(['/consultas']);
         },
         (err) => {
+          console.log(err)
           if (err.status === 400) {
             const title: string = 'Agenda Indisponivel';
-            const msg: string = 'Por favor, tente outra hora/data';
+            const msg: string = err.error.error;
             this.messageService.showWarning(msg, title);
           } else {
             const title: string = 'Erro Inesperado';

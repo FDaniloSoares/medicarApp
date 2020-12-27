@@ -87,8 +87,8 @@ export class RegisterComponent implements OnInit {
             if (err.status === 400) {
               const title: string = 'Solicitação Imprópria';
               let msg: string = 'Por favor, verifique os dados novamente';
-              if (err.error.username[0] === 'A user with that username already exists.') {
-                msg = 'Ja existe um cliente com este Login';
+              if (err.error.error) {
+                msg = err.error.error;
               }
               this.messageService.showWarning(msg, title);
             } else {

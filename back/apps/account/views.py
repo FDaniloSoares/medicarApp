@@ -4,6 +4,9 @@ from rest_framework.permissions import AllowAny
 from rest_framework.generics import CreateAPIView
 from apps.account.forms import RegisterForm
 from apps.account.serializers import UserSerializer
+from rest_framework.response import Response
+from rest_framework import status
+from copy import copy
 
 User = get_user_model()
 
@@ -14,17 +17,24 @@ class UserCreateAPIView(CreateAPIView):
     permission_classes = [AllowAny]
     authentication_classes = []
 
+    def create(self, request, *args, **kwargs):
+        if " " in request.data["username"]:
+            return Response(
+                {"error": "Login não pode conter espaço vazio"},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+        try:
+            User.objects.get(username=request.data["username"])
 
-def register(request):
-    template_name = "register.html"
-    if request.method == "POST":
-        form = RegisterForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            user = authenticate(username=request.POST["username"], password=request.POST["password1"])
-            login(request, user)
-            return redirect("/")
-    else:
-        form = RegisterForm()
-    context = {"form": form}
-    return render(request, template_name, context)
+            return Response(
+                {"error": "Ja existe usuario com este login"},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+        except User.DoesNotExist:
+            serializer = self.get_serializer(data=request.data)
+            serializer.is_valid(raise_exception=True)
+            self.perform_create(serializer)
+            headers = self.get_success_headers(serializer.data)
+            return Response(
+                serializer.data, status=status.HTTP_201_CREATED, headers=headers
+            )

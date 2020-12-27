@@ -64,13 +64,13 @@ export class LoginComponent implements OnInit {
       this.loginService.logar(login)
         .subscribe(
           (data) => {
-            const usuario = JSON.parse(
-              atob(data.access.split('.')[1]),
-            );
+            console.log(data)
             localStorage.token = data.access;
+            console.log(data.access)
             this.router.navigate(['/consultas']);
           },
           (err) => {
+            console.log(err)
             if (err.status === 401) {
               const title: string = 'Login/Senha invalido(s)';
               const msg: string = 'Possui Cadastro???';
