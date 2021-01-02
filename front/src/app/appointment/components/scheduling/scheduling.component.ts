@@ -143,8 +143,10 @@ export class SchedulingComponent implements OnInit {
         .subscribe(
           (agenda_id) => {
             this.agenda_id = parseInt(agenda_id, 10);
-            this.ativarBotaoFormulario = true;
             this.horario = hora;
+            if (!this.form.invalid) {
+              this.ativarBotaoFormulario = true;
+            }
           },
           (err) => {
             this.showErrors(err);
@@ -166,7 +168,6 @@ export class SchedulingComponent implements OnInit {
           this.router.navigate(['/consultas']);
         },
         (err) => {
-          console.log(err)
           if (err.status === 400) {
             const title: string = 'Agenda Indisponivel';
             const msg: string = err.error.error;

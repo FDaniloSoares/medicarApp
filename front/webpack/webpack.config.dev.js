@@ -36,6 +36,5 @@ module.exports = merge(common, {
     host: '0.0.0.0',
     hotOnly: true,
     historyApiFallback: true,
-    open: true,
   },
 });

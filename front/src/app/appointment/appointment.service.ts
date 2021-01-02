@@ -2,10 +2,8 @@
 /* eslint-disable max-len */
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, from } from 'rxjs';
-import {
-  filter, map, forEach, mergeMap, every,
-} from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 import { environment as env } from '../../environments/environment';
 import { HttpUtilService } from '../shared/services/http-util.service';
@@ -34,9 +32,9 @@ export class AppointmentService {
       return this.http.get(
         env.baseApiURL + this.PATH_AGENDAS, this.httpUtil.headers(),
       ).pipe(
-        map((response: any[]) => response.results.map((res: any[]) => ({
-          ...res.medico.especialidade,
-        })).map((especialidade: any[]) => especialidade.nome)),
+        map((response: any[]) => response.results
+          .map((res: any[]) => ({ ...res.medico.especialidade }))
+          .map((especialidade: any[]) => especialidade.nome)),
       );
     }
 
@@ -45,9 +43,8 @@ export class AppointmentService {
         env.baseApiURL + this.PATH_AGENDAS, this.httpUtil.headers(),
       ).pipe(
         map((response: any[]) => response.results
-          .map((respo: any[]) => ({
-            ...respo.medico,
-          })).filter((resp: any[]) => resp.especialidade.nome === especialidade)
+          .map((respo: any[]) => ({ ...respo.medico }))
+          .filter((resp: any[]) => resp.especialidade.nome === especialidade)
           .map((medico: any[]) => medico.nome)),
       );
     }
@@ -57,9 +54,7 @@ export class AppointmentService {
         env.baseApiURL + this.PATH_AGENDAS, this.httpUtil.headers(),
       ).pipe(
         map((response: any[]) => response.results
-          .map((respo: any[]) => ({
-            ...respo,
-          }))
+          .map((respo: any[]) => ({ ...respo }))
           .filter((resp: any[]) => resp.medico.nome === medico)
           .map((data: any[]) => data.dia)),
       );
@@ -70,9 +65,7 @@ export class AppointmentService {
         env.baseApiURL + this.PATH_AGENDAS, this.httpUtil.headers(),
       ).pipe(
         map((response: any[]) => response.results
-          .map((respo: any[]) => ({
-            ...respo,
-          }))
+          .map((respo: any[]) => ({ ...respo }))
           .filter((resp: any[]) => resp.medico.nome === medico)
           .filter((data: any[]) => data.dia === dia)
           .map((horas: any[]) => horas.horarios)),
