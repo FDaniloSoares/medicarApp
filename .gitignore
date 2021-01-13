@@ -6,3 +6,5 @@ venv
 .pytest_cache
 .devcontainer
 migrations
+.
+__pycache__

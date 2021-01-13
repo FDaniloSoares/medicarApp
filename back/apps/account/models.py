@@ -1,8 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-from django.conf import settings
-from django.db.models.signals import post_save
-from django.dispatch import receiver
+
 
 class User(AbstractUser):
 
@@ -16,5 +14,3 @@ class User(AbstractUser):
     class Meta:
         verbose_name = "Usuario"
         verbose_name_plural = "Usuarios"
-
-

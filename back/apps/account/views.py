@@ -1,12 +1,9 @@
-from django.contrib.auth import authenticate, get_user_model, login
-from django.shortcuts import redirect, render
+from django.contrib.auth import get_user_model
 from rest_framework.permissions import AllowAny
 from rest_framework.generics import CreateAPIView
-from apps.account.forms import RegisterForm
 from apps.account.serializers import UserSerializer
 from rest_framework.response import Response
 from rest_framework import status
-from copy import copy
 
 User = get_user_model()
 
